@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Items = () => {
+const Items = ({ cart, setCart }) => {
   const [stock, setStock] = useState([
     {
       id: 1,
@@ -27,8 +27,6 @@ const Items = () => {
       img: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
   ]);
-
-  const [cart, setCart] = useState([]);
 
   const onAdd = (item) => {
     const incart = cart.find((x) => x.id === item.id);
