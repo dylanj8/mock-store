@@ -60,7 +60,7 @@ const Items = ({ cart, setCart }) => {
 
   return (
     <>
-      <div className="grid grid-flow-row place-items-center col-span-2">
+      <div className="grid grid-cols-1 place-items-center  :md grid md:grid-cols-2 md:grid-rows-2 ">
         {stock.map((item, index) => (
           <div key={index} className="p-4">
             <h2>{item.name}</h2>
