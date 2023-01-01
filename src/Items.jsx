@@ -60,24 +60,30 @@ const Items = ({ cart, setCart }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 place-items-center  md: grid md:grid-cols-2 md:grid-rows-2 ">
+      <div className="grid grid-cols-1 place-items-center gap-4  :md grid md:grid-cols-2 md:grid-rows-2 ">
         {stock.map((item, index) => (
-          <div key={index} className="p-4">
-            <h2>{item.name}</h2>
-            <img src={item.img} alt={item.name} className="object-contain " />
-            <div className="flex md: flex md: justify-around">
-              <p className="px-4">${item.price}</p>
+          <div key={index} className="p-4 shadow-md rounded-lg m-4 ">
+            <h2 className="text-center ">
+              <b>{item.name}</b>
+            </h2>
+            <img src={item.img} alt={item.name} className="object-contain" />
+            <div className="flex items-center justify-center pt-4">
+              <p className="px-4">
+                <b className="text-xl">${item.price}</b>
+              </p>
               <button
-                className="px-4 cursor-pointer"
                 onClick={() => onAdd(item)}
+                type="button"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
               >
-                Add to Cart
+                Add to cart
               </button>
               <button
                 onClick={() => removeItem(item)}
-                className="cursor-pointer"
+                type="button"
+                className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2  dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
               >
-                Remove item
+                Remove from cart
               </button>
             </div>
           </div>
