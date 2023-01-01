@@ -18,13 +18,13 @@ const Navbar = ({ cart, setCart }) => {
     <div className="  md:flex justify-around">
       <h2 className="p-4 font-mono font-bold text-xl">Amazin Shop</h2>
       <ul className=" hidden md:flex content-evenly flex-wrap justify-evenly">
-        <li className="mx-6">Products</li>
+        <li className="mx-6 text-lg">Products</li>
         <li className="mx-6">
           <button onClick={handleCart} className=" text-lg">
             Cart ${totalPrice}
           </button>
         </li>
-        <li className="mx-6">Contact Us</li>
+        <li className="mx-6 text-lg">Contact Us</li>
       </ul>
       <div className="absolute top-0 right-0 m-2">
         <AiOutlineMenu className="h-8 w-8 md:hidden " onClick={handleNav} />

@@ -60,17 +60,25 @@ const Items = ({ cart, setCart }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 place-items-center  :md grid md:grid-cols-2 md:grid-rows-2 ">
+      <div className="grid grid-cols-1 place-items-center  md: grid md:grid-cols-2 md:grid-rows-2 ">
         {stock.map((item, index) => (
           <div key={index} className="p-4">
             <h2>{item.name}</h2>
             <img src={item.img} alt={item.name} className="object-contain " />
-            <div className="flex">
-              <p className="px-4">{item.price}</p>
-              <button className="px-4" onClick={() => onAdd(item)}>
+            <div className="flex md: flex md: justify-around">
+              <p className="px-4">${item.price}</p>
+              <button
+                className="px-4 cursor-pointer"
+                onClick={() => onAdd(item)}
+              >
                 Add to Cart
               </button>
-              <button onClick={() => removeItem(item)}>Remove item</button>
+              <button
+                onClick={() => removeItem(item)}
+                className="cursor-pointer"
+              >
+                Remove item
+              </button>
             </div>
           </div>
         ))}
